@@ -1,1 +1,10 @@
-<app-render-svg [rv]="rv"></app-render-svg>
+<select #bike1 (change)="setData(bike1.value)">
+    <option *ngFor="let bike of data; let i = index">{{bike.year}} {{bike.manufacturer}} {{bike.model}} - {{bike.size}}</option>
+</select>
+
+<select #bike2 (change)="setData(bike2.value)">
+    <option *ngFor="let bike of data; let i = index">{{bike.year}} {{bike.manufacturer}} {{bike.model}} - {{bike.size}}</option>
+</select>
+
+<app-render-svg [rv]="rv[bike1.selectedIndex]"></app-render-svg>
+<app-render-svg [rv]="rv[bike2.selectedIndex]"></app-render-svg>

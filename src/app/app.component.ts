@@ -16,17 +16,23 @@ export class AppComponent implements OnInit {
   viewWidth: number;
   groundHeight = 30;
   color = 'blue';
+  bike1: IGeometry;
+  bike2: IGeometry;
 
-  rv: IRenderingValues;
+  rv: IRenderingValues[];
 
   constructor(private dataService: GeometryDataService) {
 
   }
 
   ngOnInit() {
+    console.log('hello');
     this.data = this.dataService.getData();
-
-    this.rv = this.calculateRenderingValues(this.data[0]);
+    console.log('data: ' + this.data);
+    this.rv = [];
+    for (let i = 0; i < this.data.length; i++) {
+      this.rv[i] = this.calculateRenderingValues(this.data[i]);
+    }
   }
 
   calculateRenderingValues(geometry: IGeometry): IRenderingValues {
@@ -40,6 +46,8 @@ export class AppComponent implements OnInit {
     // wheel diameter
     if (geometry.wheelSize.toLowerCase() === '700c') {
       values.wheelDiameter = 622 + 2 * this.tyreWidth;
+    } else if (geometry.wheelSize.toLowerCase() === '29') {
+      values.wheelDiameter = 740;
     }
     values.wheelRadius = values.wheelDiameter / 2;
 
@@ -84,5 +92,9 @@ export class AppComponent implements OnInit {
 
   toRadians (angle): number {
     return angle * (Math.PI / 180);
+  }
+
+  setData(value) {
+    // console.log(value);
   }
 }

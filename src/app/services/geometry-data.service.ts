@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IGeometry } from '../models';
-import * as data from './bikes/giant-defy-advanced-2.json';
+import * as data from './bikes/giant-fathom-2.json';
 
 @Injectable()
 export class GeometryDataService {
@@ -10,9 +10,7 @@ export class GeometryDataService {
   constructor() { }
 
   getData(): IGeometry[] {
-    const d = data[0];
-    this.geometryData = [];
-    this.geometryData.push(d);
+    this.geometryData = data['bikes'];
     return this.geometryData;
   }
 }

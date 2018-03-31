@@ -1,10 +1,5 @@
-<p>
-  render-svg works!
-</p>
 
-<p>rv: {{rv|json}}</p>
-
-<svg [attr.height]="rv.viewHeight" [attr.width]="rv.viewWidth">
+<svg class="container" [attr.height]="rv.viewHeight" [attr.width]="rv.viewWidth">
 
     <!-- the ground -->
     <line [attr.x1]="rv.groundStartX" [attr.y1]="rv.groundStartY" [attr.x2]="rv.groundEndX" [attr.y2]="rv.groundEndY" [attr.stroke]="rv.color" />
