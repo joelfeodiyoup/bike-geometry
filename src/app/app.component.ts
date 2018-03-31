@@ -31,9 +31,11 @@ export class AppComponent implements OnInit {
 
   calculateRenderingValues(geometry: IGeometry): IRenderingValues {
 
-    console.log('called the calculate function');
-
     const values = {} as IRenderingValues ;
+
+    values.viewHeight = this.viewHeight;
+    values.groundHeight = this.groundHeight;
+    values.color = this.color;
 
     // wheel diameter
     if (geometry.wheelSize.toLowerCase() === '700c') {
@@ -41,17 +43,17 @@ export class AppComponent implements OnInit {
     }
     values.wheelRadius = values.wheelDiameter / 2;
 
-    this.viewWidth = values.wheelDiameter + geometry.wheelbase;
+    values.viewWidth = values.wheelDiameter + geometry.wheelbase;
 
     // ground
     values.groundStartX = 0 ;
     values.groundEndX = geometry.wheelbase + values.wheelDiameter;
-    values.groundStartY = this.viewHeight - this.groundHeight ;
-    values.groundEndY = this.viewHeight - this.groundHeight;
+    values.groundStartY = values.viewHeight - values.groundHeight ;
+    values.groundEndY = values.viewHeight - values.groundHeight;
 
     // rear wheel
     values.rearWheelX = values.wheelDiameter / 2;
-    values.rearWheelY = this.viewHeight - ( values.wheelRadius + this.groundHeight ) ;
+    values.rearWheelY = values.viewHeight - ( values.wheelRadius + values.groundHeight ) ;
 
     // front wheel
     values.frontWheelX = values.rearWheelX + geometry.wheelbase;

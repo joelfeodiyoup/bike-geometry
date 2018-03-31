@@ -22,6 +22,10 @@ export interface IGeometry {
 }
 
 export interface IRenderingValues {
+    viewHeight: number;
+    viewWidth: number;
+    groundHeight: number;
+    color: string;
     groundStartX: number;
     groundEndX: number;
     groundStartY: number;

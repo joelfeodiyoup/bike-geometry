@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { GeometryDataService } from './services/geometry-data.service';
+import { RenderSvgComponent } from './render-svg/render-svg.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RenderSvgComponent
   ],
   imports: [
     BrowserModule
