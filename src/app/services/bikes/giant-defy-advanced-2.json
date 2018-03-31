@@ -1,0 +1,22 @@
+[{
+    "manufacturer": "Giant",
+    "model": "Defy Advanced 2",
+    "year": 2018,
+    "size": "M/L",
+    "seatTubeLength": 515,
+    "seatTubeAngle": 73.0,
+    "topTubeLength": 560,
+    "headTubeLength": 190,
+    "headTubeAngle": 72.5,
+    "forkRake": 45,
+    "trail": 60,
+    "wheelbase": 1007,
+    "chainStayLength": 420,
+    "bottomBracketDrop": 65,
+    "stack": 586,
+    "reach": 381,
+    "standOverHeight": 790,
+    "stemLength": 110,
+    "crankLength": 172.5,
+    "wheelSize": "700C"
+}]
